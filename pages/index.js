@@ -22,16 +22,17 @@ const useStyles = makeStyles(theme => ({
 export async function getStaticProps() {
   const baseURI = projects.baseURI
   const repos = projects.repositories
-  const reqInit = {
-    headers: { 
-      'Authorization': `token ${process.env.PAT}`
-    }
-  }
+  // const reqInit = {
+  //   headers: { 
+  //     'Authorization': `token ${process.env.PAT}`
+  //   }
+  // 
+  const reqInit = '';
   const fullRepoData = await Promise.allSettled(
     repos.map(
       async name => {
-        const repo = await fetch(baseURI + name, reqInit).then(res => res.json());
-        const langs = await fetch(baseURI + name + "/languages", reqInit).then(res => res.json())
+        const repo = await fetch(baseURI + name).then(res => res.json());
+        const langs = await fetch(baseURI + name + "/languages").then(res => res.json())
         return {
           ...repo,
           languages: Object.getOwnPropertyNames(langs)
