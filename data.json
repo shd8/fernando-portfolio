@@ -1,0 +1,185 @@
+{
+    "name": "Fernando Gómez",
+    "landing": {
+        "title": "Hi, I'm Fernando",
+        "subtitles": [
+            "Frontend developer 🖥️",
+            "Full-stack developer 🌐",
+            "Cross-platform developer 📱💻",
+            "Beautifully coding 🪄"
+        ],
+        "professionalDetails": [
+            {
+                "id": 0,
+                "alt": "Check my profile ;)",
+                "icon": "LinkedIn",
+                "link": "https://www.linkedin.com/in/fernando-gomez-graciani/"
+            },
+            {
+                "id": 1,
+                "alt": "Let's take a look to the code",
+                "icon": "GitHub",
+                "link": "https://github.com/shd8"
+            },
+            {
+                "id": 2,
+                "alt": "Contact me, don't be shy",
+                "icon": "Gmail",
+                "link": "mailto:shadyfast8.services@gmail.com"
+            }
+        ]
+    },
+    "skills": {
+        "Languages known": [
+            "TypeScript",
+            "JavaScript",
+            "HTML5",
+            "CSS3"
+        ],
+        "Frontend": [
+            "React",
+            "Redux",
+            "Next.js",
+            "Vue.js",
+            "Vercel",
+            "Material-UI",
+            "Bootstrap",
+            "Sass"
+        ],
+        "Backend": [
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Heroku",
+            "Firebase"
+        ],
+        "Testing": [
+            "Jest",
+            "Cypress",
+            "Testing Library",
+            "SonarQube"
+        ],
+        "And more tools and technologies": [
+            "Git",
+            "GitHub",
+            "ESLint",
+            "GitLab",
+            "macOS",
+            {
+                "alt": "Linux",
+                "backgroundColor": "#000",
+                "icon": "Linux"
+            },
+            "Amazon AWS",
+            "Auth0",
+            "Babel",
+            "Chakra UI",
+            "GitHub Actions",
+            "Nodemon",
+            {
+                "alt": "npm",
+                "icon": "NPM"
+            },
+            "Yarn",
+            "Postman",
+            "React Router",
+            "Redux-Saga",
+            "Stripe",
+            "Webpack",
+            "Confluence",
+            "Figma",
+            "Iconify",
+            "JSON",
+            "JSON Web Tokens",
+            "Jira",
+            "Markdown",
+            "Prettier"
+
+        ]
+    },
+    "projects": {
+        "baseURI": "https://api.github.com/repos/<>/",
+        "repositories": [
+            "Portfolio"
+        ]
+    },
+    "experience": {
+        "Work Experience": [
+            {
+                "organization": "",
+                "role": "",
+                "type": "",
+                "startDate": "YYYY-MM-DD",
+                "endDate": "YYYY_MM_DD",
+                "city": "",
+                "state": "",
+                "country": "",
+                "url": "",
+                "thumbnail": "/"
+            },
+            {
+                "organization": "",
+                "role": "",
+                "type": "",
+                "startDate": "",
+                "endDate": "",
+                "city": "",
+                "state": "",
+                "country": "Idia",
+                "url": "linkedin URL for example",
+                "thumbnail": "/"
+            }
+        ],
+        "Volunteer Experience": [
+            {
+                "organization": "",
+                "role": "",
+                "type": "",
+                "startDate": "",
+                "endDate": "",
+                "city": "",
+                "state": "",
+                "country": "",
+                "url": "",
+                "thumbnail": "/"
+            },
+            {
+                "organization": "",
+                "role": "",
+                "type": "",
+                "startDate": "",
+                "endDate": "",
+                "city": "",
+                "state": "",
+                "country": "",
+                "url": "",
+                "thumbnail": "/"
+            }
+        ]
+    },
+    "about": {
+        "description": "I am, I do, I bla bla bli ",
+        "picture": "/profile.JPG",
+        "social": []
+    },
+    "theme": {
+        "light": {
+            "palette": {
+                "type": "light",
+                "background": {
+                    "paper": "#fff",
+                    "default": "#fafafa"
+                }
+            }
+        },
+        "dark": {
+            "palette": {
+                "type": "dark",
+                "background": {
+                    "paper": "#303030",
+                    "default": "#212121"
+                }
+            }
+        }
+    }
+}
