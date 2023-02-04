@@ -98,68 +98,80 @@
         ]
     },
     "projects": {
-        "baseURI": "https://api.github.com/repos/<>/",
+        "baseURI": "https://api.github.com/repos/shd8/",
         "repositories": [
-            "Portfolio"
+            "fernando-portfolio",
+            "speech-recognition",
+            "advertisements",
+            "the-right-way",
+            "evolmind-voices",
+            "react-chess",
+            "fullstack-react-todolist",
+            "game-of-life"
         ]
     },
     "experience": {
         "Work Experience": [
             {
-                "organization": "",
-                "role": "",
-                "type": "",
-                "startDate": "YYYY-MM-DD",
-                "endDate": "YYYY_MM_DD",
-                "city": "",
-                "state": "",
-                "country": "",
-                "url": "",
-                "thumbnail": "/"
+                "organization": "Accenture",
+                "role": "Frontend Developer",
+                "startDate": "2022-03",
+                "endDate": "",
+                "country": "Remote",
+                "url": "https://www.irium.es/?lang=en",
+                "thumbnail": "/IRIUM.png"
             },
             {
-                "organization": "",
-                "role": "",
-                "type": "",
-                "startDate": "",
-                "endDate": "",
-                "city": "",
-                "state": "",
-                "country": "Idia",
-                "url": "linkedin URL for example",
-                "thumbnail": "/"
+                "organization": "Dinbeaters",
+                "role": "Frontend Developer",
+                "startDate": "2021-09",
+                "endDate": "2022-03",
+                "city": "Barcelona",
+                "state": "Barcelona",
+                "country": "Spain",
+                "url": "https://www.irium.es/?lang=en",
+                "thumbnail": "/IRIUM.png"
+            },
+            {
+                "organization": "ISDI Coders",
+                "role": "Full Stack Developer",
+                "startDate": "2021-04",
+                "endDate": "2021-09",
+                "city": "Barcelona",
+                "state": "Barcelona",
+                "country": "Spain",
+                "url": "https://www.irium.es/?lang=en",
+                "thumbnail": "/IRIUM.png"
+            },
+            {
+                "organization": "IRIUM",
+                "role": "Frontend Developer",
+                "startDate": "2020-02",
+                "endDate": "2021-03",
+                "city": "Mallorca",
+                "state": "Balearic Islands",
+                "country": "Spain",
+                "url": "https://www.irium.es/?lang=en",
+                "thumbnail": "/IRIUM.png"
             }
         ],
         "Volunteer Experience": [
             {
-                "organization": "",
-                "role": "",
-                "type": "",
-                "startDate": "",
-                "endDate": "",
-                "city": "",
-                "state": "",
-                "country": "",
-                "url": "",
-                "thumbnail": "/"
-            },
-            {
-                "organization": "",
-                "role": "",
-                "type": "",
-                "startDate": "",
-                "endDate": "",
-                "city": "",
-                "state": "",
-                "country": "",
-                "url": "",
-                "thumbnail": "/"
+                "organization": "IRIUM",
+                "role": "Frontend Developer",
+                "startDate": "2020-02",
+                "endDate": "2021-03",
+                "city": "Mallorca",
+                "state": "Balearic Islands",
+                "country": "Spain",
+                "url": "https://www.irium.es/?lang=en",
+                "thumbnail": "/IRIUM.png"
             }
         ]
     },
     "about": {
         "description": "I am, I do, I bla bla bli ",
-        "picture": "/profile.JPG",
+        "picture": "/IRIUM.png",
         "social": []
     },
     "theme": {

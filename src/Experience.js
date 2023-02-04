@@ -54,6 +54,13 @@ const getHumanDiff = (startDate, endDate) => {
     return str;
 }
 
+const formatDate = (date) => {
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    const fullDate = new Date(date);
+    return `${month[fullDate.getMonth()]} ${fullDate.getFullYear()}`
+}
+
 export default function Experience() {
 
     const classes = useStyles()
@@ -96,7 +103,6 @@ export default function Experience() {
                                     experience[title].map(({
                                         organization,
                                         role,
-                                        type,
                                         startDate,
                                         endDate,
                                         city,
@@ -125,17 +131,21 @@ export default function Experience() {
                                                                 </Avatar>
                                                             }
                                                             title={organization}
-                                                            subheader={role + " - " + type}
+                                                            subheader={role}
                                                         />
                                                         <CardHeader
                                                             avatar={<DateRange />}
                                                             title={getHumanDiff(startDate, endDate)}
-                                                            subheader={`${startDate} - ${endDate}`}
+                                                            subheader={
+                                                                startDate && endDate 
+                                                                    ? `${formatDate(startDate)} ~ ${formatDate(endDate)}` 
+                                                                    : `${formatDate(startDate)} ~ Present`
+                                                                }
                                                             className={classes.cardHeader}
                                                         />
                                                         <CardHeader
                                                             avatar={<LocationCity />}
-                                                            subheader={`${city}, ${state}, ${country}`}
+                                                            subheader={city && state && country ? `${city}, ${state}, ${country}` : 'Remote'}
                                                             className={classes.cardHeader}
                                                         />
                                                     </CardActionArea>
