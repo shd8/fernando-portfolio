@@ -26,5 +26,6 @@
   },
   "devDependencies": {
     "@types/simple-icons": "^4.10.0"
-  }
+  },
+  "packageManager": "yarn@3.4.1"
 }
