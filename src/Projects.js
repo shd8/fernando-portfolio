@@ -36,8 +36,8 @@ export default function Projects({ data }) {
                             <Image
                                 alt="Projects"
                                 src="/projects.svg"
-                                width="1144"
-                                height="617.32"
+                                width="575"
+                                height="325"
                             />
                         </div>
                     </Fade>
