@@ -73,8 +73,8 @@ export default function Skills() {
                             <Image
                                 alt="Skills"
                                 src="/skill.svg"
-                                width="1139"
-                                height="655"
+                                width="575"
+                                height="338"
                             />
                         </div>
                     </Fade>

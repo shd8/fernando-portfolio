@@ -92,7 +92,7 @@ export default function Landing() {
                         <Image
                             src="/landing.svg"
                             alt="Landing"
-                            width="900.94"
+                            width="616"
                             height="787"
                         />
                     </Grid>
