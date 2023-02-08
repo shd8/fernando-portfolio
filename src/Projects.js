@@ -1,6 +1,6 @@
 import { Card, CardActionArea, CardActions, CardContent, CardHeader, Chip, Fade, Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
 import { RepoForkedIcon, RepoIcon, StarIcon } from '@primer/octicons-react';
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { useRef } from "react";
 import useAnimate from "./useAnimate";
 

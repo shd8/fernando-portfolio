@@ -1,5 +1,5 @@
 import { Avatar, Card, CardActionArea, CardHeader, Fade, Grid, Hidden, makeStyles, Typography, useMediaQuery, useTheme } from "@material-ui/core";
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { DateRange, LocationCity } from '@material-ui/icons';
 import data from '../data.json'
 import { useRef } from "react";

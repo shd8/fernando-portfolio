@@ -1,6 +1,6 @@
 import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom } from "@material-ui/core";
 import clsx from "clsx";
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { useRef} from "react";
 import * as icons from 'simple-icons'
 import data from '../data.json'
