@@ -73,7 +73,7 @@ export default function Experience() {
     const animate = useAnimate(animRef)
 
     return (
-        <Grid direction="row" container justify="center" alignItems="center" spacing={10} className={classes.cont}>
+        <Grid  innerRef={animRef} direction="row" container justify="center" alignItems="center" spacing={10} className={classes.cont}>
             <Grid item xs={12} lg={6}>
                 <Typography variant="h2" gutterBottom align="center">
                     Experience
@@ -111,8 +111,8 @@ export default function Experience() {
                                         url,
                                         thumbnail
                                     }, i) =>
-                                        <Grid item xs={12} sm key={i}>
-                                            <Fade in={animate} style={{ transitionDelay: `${200 * i}ms` }}>
+                                        <Grid item sm xs={12} key={i}>
+                                            <Fade in={animate} style={{ transitionDelay: `${400 * i}ms` }}>
                                                 <Card className={classes.card}>
                                                     <CardActionArea
                                                         className={classes.cardActionArea}
@@ -159,7 +159,7 @@ export default function Experience() {
                     )
                 }
             </Grid>
-            <div ref={animRef}></div>
+            {/* <div ref={animRef}></div> */}
         </Grid>
     )
 }

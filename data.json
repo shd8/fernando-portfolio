@@ -118,8 +118,8 @@
                 "startDate": "2022-03",
                 "endDate": "",
                 "country": "Remote",
-                "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.png"
+                "url": "https://www.accenture.com/us-en/about/company/integrated-reporting#",
+                "thumbnail": "/ACCENTURE.webp"
             },
             {
                 "organization": "Dinbeaters",
@@ -129,8 +129,8 @@
                 "city": "Barcelona",
                 "state": "Barcelona",
                 "country": "Spain",
-                "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.png"
+                "url": "https://www.dinbeat.com/en/",
+                "thumbnail": "/DINBEAT.jpeg"
             },
             {
                 "organization": "ISDI Coders",
@@ -140,8 +140,8 @@
                 "city": "Barcelona",
                 "state": "Barcelona",
                 "country": "Spain",
-                "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.png"
+                "url": "https://isdicoders.com/",
+                "thumbnail": "/ISDI.png"
             },
             {
                 "organization": "IRIUM",
@@ -157,21 +157,21 @@
         ],
         "Volunteer Experience": [
             {
-                "organization": "IRIUM",
-                "role": "Frontend Developer",
-                "startDate": "2020-02",
-                "endDate": "2021-03",
-                "city": "Mallorca",
-                "state": "Balearic Islands",
-                "country": "Spain",
-                "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.png"
+                "organization": "The Church of Jesus Christ",
+                "role": "Volunteer Staff",
+                "startDate": "2016-11",
+                "endDate": "2018-11",
+                "city": "São Paulo",
+                "state": "São Paulo",
+                "country": "Brazil",
+                "url": "https://www.churchofjesuschrist.org/",
+                "thumbnail": "/LDS.png"
             }
         ]
     },
     "about": {
         "description": "I am, I do, I bla bla bli ",
-        "picture": "/IRIUM.png",
+        "picture": "/FERNANDO.jpeg",
         "social": []
     },
     "theme": {
