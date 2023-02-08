@@ -170,9 +170,20 @@
         ]
     },
     "about": {
-        "description": "I am, I do, I bla bla bli ",
+        "description": "Full Stack Web Developer, proactive and capable of developing elegant and pioneering web pages and application designs for demanding clients. Expert problem solving, organized and multitasking with experience in project scheduling, design improvement and code verification.",
         "picture": "/FERNANDO.jpeg",
-        "social": []
+        "social": [
+            {
+                "alt": "Linkedin",
+                "icon": "LinkedIn",
+                "link": "https://www.linkedin.com/in/fernando-gomez-graciani/"
+            },
+            {
+                "alt": "Instagram",
+                "icon": "Instagram",
+                "link": "https://www.instagram.com/shadyfast8/"
+            }
+        ]
     },
     "theme": {
         "light": {
