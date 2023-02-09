@@ -21,3 +21,6 @@ yarn-error.log*
 .yarn/**
 
 .vscode
+
+/public/*.js.map
+/public/*.js
