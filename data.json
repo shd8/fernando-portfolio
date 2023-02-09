@@ -130,7 +130,7 @@
                 "state": "Barcelona",
                 "country": "Spain",
                 "url": "https://www.dinbeat.com/en/",
-                "thumbnail": "/DINBEAT.jpeg"
+                "thumbnail": "/DINBEAT.webp"
             },
             {
                 "organization": "ISDI Coders",
@@ -141,7 +141,7 @@
                 "state": "Barcelona",
                 "country": "Spain",
                 "url": "https://isdicoders.com/",
-                "thumbnail": "/ISDI.png"
+                "thumbnail": "/ISDI.webp"
             },
             {
                 "organization": "IRIUM",
@@ -152,7 +152,7 @@
                 "state": "Balearic Islands",
                 "country": "Spain",
                 "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.png"
+                "thumbnail": "/IRIUM.webp"
             }
         ],
         "Volunteer Experience": [
@@ -165,13 +165,13 @@
                 "state": "São Paulo",
                 "country": "Brazil",
                 "url": "https://www.churchofjesuschrist.org/",
-                "thumbnail": "/LDS.png"
+                "thumbnail": "/LDS.webp"
             }
         ]
     },
     "about": {
         "description": "Full Stack Web Developer, proactive and capable of developing elegant and pioneering web pages and application designs for demanding clients. Expert problem solving, organized and multitasking with experience in project scheduling, design improvement and code verification.",
-        "picture": "/FERNANDO.jpeg",
+        "picture": "/FERNANDO.webp",
         "social": [
             {
                 "alt": "Linkedin",
