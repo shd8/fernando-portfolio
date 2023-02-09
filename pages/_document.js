@@ -13,8 +13,12 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="black" />
           <meta name="description" content={`Portfolio of ${name}`}/>
           <meta name='keywords' content={'Portfolio ' + name + ' skills projects experience resume'} />
+          <link 
+            rel="preload" 
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" as="style"
+          />
           <link
-            rel="preload"
+            rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
