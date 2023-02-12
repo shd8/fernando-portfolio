@@ -78,18 +78,14 @@ export default function Experience() {
                 <Typography variant="h2" gutterBottom align="center">
                     Experience
                 </Typography>
-                <Hidden mdDown>
-                    <Fade in={animate} style={{ transitionDelay: '250ms' }}>
-                        <div>
-                            <Image
-                                alt="Experience"
-                                src="/experience.svg"
-                                width="575"
-                                height="480"
-                            />
-                        </div>
-                    </Fade>
-                </Hidden>
+                
+                <Image
+                    alt="Experience"
+                    src="/experience.svg"
+                    width="575"
+                    height="480"
+                />
+
             </Grid>
             <Grid container item xs={12} lg={6} direction="column" spacing={1} alignItems={align}>
                 {

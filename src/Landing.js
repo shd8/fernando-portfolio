@@ -5,7 +5,6 @@ import Image from "next/legacy/image";
 import * as icons from 'simple-icons'
 import data from '../data.json'
 import { getDescendantProp } from "./util";
-import Cancel from "@material-ui/icons/Cancel";
 const { landing } = data
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link, id }) => {
@@ -86,18 +85,15 @@ export default function Landing() {
                 </Grid>
             </Grid>
 
-            <Hidden mdDown>
-                <Fade in={true} style={{ transitionDelay: '100ms' }}>
-                    <Grid item lg={6}>
-                        <Image
-                            src="/landing.svg"
-                            alt="Landing"
-                            width="616"
-                            height="787"
-                        />
-                    </Grid>
-                </Fade>
-            </Hidden>
+            <Grid item lg={6}>
+                <Image
+                    src="/landing.svg"
+                    alt="Landing"
+                    width="616"
+                    height="787"
+                />
+            </Grid>
+
         </Grid>
     )
 }

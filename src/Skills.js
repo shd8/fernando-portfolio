@@ -67,18 +67,14 @@ export default function Skills() {
                 <Typography variant="h2" gutterBottom align="center">
                     Skills
                 </Typography>
-                <Hidden mdDown>
-                    <Fade in={animate} style={{ transitionDelay: '100ms' }}>
-                        <div>
-                            <Image
-                                alt="Skills"
-                                src="/skill.svg"
-                                width="575"
-                                height="338"
-                            />
-                        </div>
-                    </Fade>
-                </Hidden>
+
+                <Image
+                    alt="Skills"
+                    src="/skill.svg"
+                    width="575"
+                    height="338"
+                />
+                       
             </Grid>
             <Grid container item xs={12} lg={6} direction="column" spacing={1} alignItems={align}>
                 {
