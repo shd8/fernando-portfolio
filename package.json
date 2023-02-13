@@ -25,7 +25,8 @@
     "deploy": "npx vercel --prod"
   },
   "devDependencies": {
-    "@types/simple-icons": "^4.10.0"
+    "@types/simple-icons": "^4.10.0",
+    "typescript": "4.9.5"
   },
   "packageManager": "yarn@3.4.1"
 }
