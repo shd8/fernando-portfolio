@@ -3,15 +3,15 @@
     "landing": {
         "title": "Hi, I'm Fernando",
         "subtitles": [
-            "Frontend developer 🖥️",
-            "Full-stack developer 🌐",
-            "Cross-platform developer 📱💻",
-            "Beautifully coding 🪄"
+            "Frontend developer &#x1F4BB;",
+            "Full-stack developer &#x1F310;",
+            "Cross-platform developer &#x1F4F1; &#x1F4BB;",
+            "Beautifully coding &#x1F4AB;"
         ],
         "professionalDetails": [
             {
                 "id": 0,
-                "alt": "Check my profile ;)",
+                "alt": "Check my profile 😉",
                 "icon": "LinkedIn",
                 "link": "https://www.linkedin.com/in/fernando-gomez-graciani/"
             },
