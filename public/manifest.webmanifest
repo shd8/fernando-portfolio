@@ -9,6 +9,12 @@
     "description": "Fernando Gomez Graciani portfolio",
     "icons": [
         {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
             "src": "/favicon-196x196.png",
             "sizes": "196x196",
             "type": "image/png",

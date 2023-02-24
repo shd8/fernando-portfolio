@@ -68,7 +68,7 @@ export default function Index({ projects, setTheme }) {
           <Typography variant="h6" className={classes.root}>
             { name }
           </Typography>
-          <IconButton edge="end" color="inherit" onClick={toggleTheme}>
+          <IconButton aria-label='theme-toggle' edge="end" color="inherit" onClick={toggleTheme}>
             {theme.palette.type === "dark" ? <Brightness7/> : <Brightness4/>}
           </IconButton>
         </Toolbar>
