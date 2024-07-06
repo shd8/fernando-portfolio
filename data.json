@@ -113,10 +113,19 @@
     "experience": {
         "Work Experience": [
             {
+                "organization": "ArangoDB",
+                "role": "Frontend Developer",
+                "startDate": "2023-04",
+                "endDate": "",
+                "country": "Remote",
+                "url": "https://arangodb.com/",
+                "thumbnail": "/arangodb.webp"
+            },
+            {
                 "organization": "Accenture",
                 "role": "Frontend Developer",
                 "startDate": "2022-03",
-                "endDate": "",
+                "endDate": "2023-04",
                 "country": "Remote",
                 "url": "https://www.accenture.com/us-en/about/company/integrated-reporting#",
                 "thumbnail": "/ACCENTURE.webp"
@@ -170,7 +179,7 @@
         ]
     },
     "about": {
-        "description": "Full Stack Web Developer, proactive and capable of developing elegant and pioneering web pages and application designs for demanding clients. Expert problem solving, organized and multitasking with experience in project scheduling, design improvement and code verification.",
+        "description": "Highly motivated Frontend Developer with 3+ years of experience building user-friendly and performant web applications using React, Next.js, and TypeScript. Eager to contribute to the next innovative company and leverage my skills in component development, API integration, and performance optimization to help expand your React ecosystem.",
         "picture": "/FERNANDO.webp",
         "social": [
             {
