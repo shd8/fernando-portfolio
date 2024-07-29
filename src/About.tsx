@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid, makeStyles, Typography, Tooltip, Avatar } from "@material-ui/core";
 import data from '../data.json'
 import simpleIcons from 'simple-icons'
@@ -9,10 +10,15 @@ const { about } = data
 
 const dpx = about.social.length*10 - 2
 
+interface IconWithHexAndComponent extends SimpleIcon {
+    hex: string;
+    component?: any;
+  }
+
 const socialDetails = about.social.map(({ alt, icon, link }) => {
-    const ic = simpleIcons.get(iconify(icon)) || {
+    const ic: IconWithHexAndComponent = simpleIcons.get(iconify(icon)) || {
         hex: '424242',
-        component: <Cancel color="white" fontSize={36}/>
+        component: <Cancel fontSize='small' color='primary' />
     }
     return {
         alt,
@@ -25,12 +31,14 @@ const socialDetails = about.social.map(({ alt, icon, link }) => {
     }
 })
 
-let iobj = {}
+interface IAnyObject { [key:string]: any }
+
+let iobj: IAnyObject = {}
 socialDetails.forEach(({ alt, backgroundColor }) => {
     iobj[alt] = { backgroundColor }
 })
 
-const useStyles = makeStyles(theme => ({
+const useStyles: () => IAnyObject = makeStyles(theme => ({
     cont: {
         minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
         alignSelf: 'center',
