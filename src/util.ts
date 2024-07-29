@@ -29,7 +29,7 @@ export function iconify(input = "") {
   return output;
 }
 
-export function getDescendantProp(obj: { [key: string]: any }, desc: { [key: string]: any }) {
+export function getDescendantProp(obj: { [key: string]: any }, desc: any) {
   var arr = desc.split("/");
   while (arr.length && (obj = obj[arr.shift()]));
   return obj;
