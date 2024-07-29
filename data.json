@@ -193,25 +193,5 @@
                 "link": "https://www.instagram.com/shadyfast8/"
             }
         ]
-    },
-    "theme": {
-        "light": {
-            "palette": {
-                "type": "light",
-                "background": {
-                    "paper": "#fff",
-                    "default": "#fafafa"
-                }
-            }
-        },
-        "dark": {
-            "palette": {
-                "type": "dark",
-                "background": {
-                    "paper": "#303030",
-                    "default": "#212121"
-                }
-            }
-        }
     }
 }
