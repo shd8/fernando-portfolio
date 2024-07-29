@@ -9,7 +9,7 @@ import data from "../data.json";
 import { getDescendantProp } from "./util";
 const { landing } = data;
 
-const Spline = dynamic(() => import("./WrappedSpline"), { ssr: false });
+// const Spline = dynamic(() => import("./WrappedSpline"), { ssr: false });
 
 const SplineWrapper = styled(Box)({
   position: "absolute",
@@ -93,9 +93,7 @@ export default function Landing() {
         <Fade in={true} style={{ transitionDelay: "100ms" }}>
           <>
             <Grid item lg={6}></Grid>
-            <SplineWrapper>
-              <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
-            </SplineWrapper>
+            <SplineWrapper></SplineWrapper>
             {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
           </>
         </Fade>
