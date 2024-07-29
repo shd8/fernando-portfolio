@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
@@ -62,6 +62,10 @@ export default function Landing() {
   const classes = useStyles();
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down("sm"));
+
+  useEffect(() => {
+    console.log("Landing component mounted");
+  }, []);
 
   return (
     <Grid container justify="center" alignItems="center" className={classes.cont}>
