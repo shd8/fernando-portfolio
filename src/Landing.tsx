@@ -89,15 +89,17 @@ export default function Landing() {
       </Grid>
 
       <Hidden mdDown>
-        <>
-          <Grid item lg={6}></Grid>
-          {/* <Suspense fallback={<div>Loading...</div>}> */}
-          {/* <SplineWrapper> */}
-          <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
-          {/* </SplineWrapper> */}
-          {/* </Suspense> */}
-          {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
-        </>
+        <Fade in={true} style={{ transitionDelay: "100ms" }}>
+          <>
+            <Grid item lg={6}></Grid>
+            <Suspense fallback={<div>Loading...</div>}>
+              <SplineWrapper>
+                <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
+              </SplineWrapper>
+            </Suspense>
+            {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
+          </>
+        </Fade>
       </Hidden>
     </Grid>
   );
