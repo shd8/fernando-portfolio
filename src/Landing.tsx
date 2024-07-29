@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
-import Spline from "@splinetool/react-spline";
 import Image from "next/legacy/image";
 import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
 const { landing } = data;
+
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const SplineWrapper = styled(Box)({
   position: "absolute",
@@ -91,9 +92,11 @@ export default function Landing() {
         <Fade in={true} style={{ transitionDelay: "100ms" }}>
           <>
             <Grid item lg={6}></Grid>
-            <SplineWrapper>
-              <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
-            </SplineWrapper>
+            <Suspense fallback={<div>Loading...</div>}>
+              <SplineWrapper>
+                <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
+              </SplineWrapper>
+            </Suspense>
             {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
           </>
         </Fade>
