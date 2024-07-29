@@ -1,11 +1,17 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
 import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
+import WrappedSpline from "./WrappedSpline";
 const { landing } = data;
+
+const SplineWrapper = styled(Box)({
+  position: "absolute",
+  right: "-20%",
+});
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link, id }) => {
   const ic = getDescendantProp(icons, icon) || icons.get("Next.js");
@@ -84,6 +90,9 @@ export default function Landing() {
         <Fade in={true} style={{ transitionDelay: "100ms" }}>
           <>
             <Grid item lg={6}></Grid>
+            <SplineWrapper>
+              <WrappedSpline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
+            </SplineWrapper>
             {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
           </>
         </Fade>
