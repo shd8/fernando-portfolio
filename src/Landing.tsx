@@ -2,12 +2,16 @@ import React from "react";
 import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
-import Spline from "@splinetool/react-spline";
+import dynamic from "next/dynamic";
 import Image from "next/legacy/image";
 import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
 const { landing } = data;
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
 
 const SplineWrapper = styled(Box)({
   position: "absolute",
