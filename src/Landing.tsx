@@ -94,7 +94,11 @@ export default function Landing() {
 
       <Grid item lg={6}></Grid>
       <SplineWrapper mdDown={mdDown}>
-        <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
+        {
+          <Spline
+            scene={mdDown ? "https://prod.spline.design/IBloZ3RYXpgjascD/scene.splinecode" : "https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode"}
+          />
+        }
       </SplineWrapper>
     </Grid>
   );
