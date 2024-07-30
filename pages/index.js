@@ -1,5 +1,6 @@
-import { AppBar, Container, IconButton, makeStyles, Toolbar, Typography, useScrollTrigger, useTheme } from "@material-ui/core";
+import { AppBar, Container, IconButton, makeStyles, Toolbar, Typography, useScrollTrigger, useTheme, Box, styled } from "@material-ui/core";
 import { Brightness4, Brightness7 } from "@material-ui/icons";
+import Spline from "@splinetool/react-spline";
 import { Analytics } from "@vercel/analytics/react";
 import React, { useCallback } from "react";
 import data from "../data.json";
@@ -11,6 +12,15 @@ import Skills from "../src/Skills";
 import { darkTheme, lightTheme } from "../src/theme";
 
 const { name, projects } = data;
+
+const SplineWrapper = styled(Box)(() => ({
+  position: "absolute",
+  height: "100%",
+  left: "-35vw",
+  top: "-25vh",
+  width: "100%",
+  zIndex: "-1",
+}));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,6 +67,9 @@ export default function Index({ projects, setTheme }) {
 
   return (
     <div className={classes.root}>
+      <SplineWrapper>
+        <Spline scene="https://prod.spline.design/arW6KRcyeihpTTzn/scene.splinecode" />
+      </SplineWrapper>
       <Analytics />
       <AppBar color={!trigger ? "transparent" : "inherit"} className={classes.appBar} position="fixed">
         <Toolbar>
