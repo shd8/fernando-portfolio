@@ -9,7 +9,7 @@ import Spline from "@splinetool/react-spline";
 
 const { landing } = data;
 
-const SplineWrapper = styled(Box)(({ mdDown }: { mdDown: boolean }) => ({
+const SplineWrapper = styled(Box)(({ mdDown }: { mdDown: Boolean }) => ({
   position: mdDown ? undefined : "absolute",
   right: mdDown ? undefined : "-20%",
   height: mdDown ? "60vh" : undefined,
@@ -93,11 +93,7 @@ export default function Landing() {
 
       <Grid item lg={6}></Grid>
       <SplineWrapper mdDown={mdDown}>
-        {
-          <Spline
-            scene={mdDown ? "https://prod.spline.design/IBloZ3RYXpgjascD/scene.splinecode" : "https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode"}
-          />
-        }
+        {<Spline scene={`https://prod.spline.design/${mdDown ? "IBloZ3RYXpgjascD" : "MXlM9tgFBK6WdzPl"}/scene.splinecode`} />}
       </SplineWrapper>
     </Grid>
   );
