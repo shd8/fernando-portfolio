@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
-import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
+import React from "react";
+import { Avatar, Grid, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
 import * as icons from "simple-icons";
@@ -10,10 +10,12 @@ import Spline from "@splinetool/react-spline";
 
 const { landing } = data;
 
-const SplineWrapper = styled(Box)({
-  position: "absolute",
-  right: "-20%",
-});
+const SplineWrapper = styled(Box)(({ mdDown }: { mdDown: boolean }) => ({
+  position: mdDown ? undefined : "absolute",
+  right: mdDown ? undefined : "-20%",
+  height: mdDown ? "60vh" : undefined,
+  width: mdDown ? "100%" : undefined,
+}));
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link, id }) => {
   const ic = getDescendantProp(icons, icon) || icons.get("Next.js");
@@ -64,18 +66,16 @@ export default function Landing() {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down("sm"));
 
-  useEffect(() => {
-    console.log("Landing component mounted");
-  }, []);
-
   return (
     <Grid container justify="center" alignItems="center" className={classes.cont}>
       <Grid item xs={12} lg={6}>
-        <Typography variant={mdDown ? "h2" : "h1"}>{landing.title}</Typography>
-        <Typography variant={mdDown ? "h5" : "h4"} component="h2" className={classes.subtitle}>
+        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h2" : "h1"}>
+          {landing.title}
+        </Typography>
+        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h5" : "h4"} component="h2" className={classes.subtitle}>
           <ReactTyped strings={landing.subtitles} typeSpeed={40} backSpeed={50} loop />
         </Typography>
-        <Grid container direction="row" spacing={2}>
+        <Grid container direction="row" spacing={2} justify={mdDown ? "center" : undefined}>
           {professionalDetails.map(({ alt, icon, link, id }, i) => (
             <Grid item key={i}>
               <a href={link} target="_blank" rel="noopener noreferrer">
@@ -92,17 +92,10 @@ export default function Landing() {
         </Grid>
       </Grid>
 
-      <Hidden mdDown>
-        <Fade in={true} style={{ transitionDelay: "100ms" }}>
-          <>
-            <Grid item lg={6}></Grid>
-            <SplineWrapper>
-              <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
-            </SplineWrapper>
-            {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
-          </>
-        </Fade>
-      </Hidden>
+      <Grid item lg={6}></Grid>
+      <SplineWrapper mdDown={mdDown}>
+        <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
+      </SplineWrapper>
     </Grid>
   );
 }
