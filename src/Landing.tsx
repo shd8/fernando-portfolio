@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Avatar, Grid, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom, styled, Box } from "@material-ui/core";
 import ReactTyped from "react-typed";
