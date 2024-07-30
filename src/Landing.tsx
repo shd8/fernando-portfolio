@@ -7,12 +7,8 @@ import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
 import Spline from "@splinetool/react-spline";
-import dynamic from "next/dynamic";
-const { landing } = data;
 
-const DynamicSpline = dynamic(() => import("./Spline"), {
-  ssr: false,
-});
+const { landing } = data;
 
 const SplineWrapper = styled(Box)({
   position: "absolute",
@@ -101,7 +97,7 @@ export default function Landing() {
           <>
             <Grid item lg={6}></Grid>
             <SplineWrapper>
-              <DynamicSpline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />;
+              <Spline scene="https://prod.spline.design/MXlM9tgFBK6WdzPl/scene.splinecode" />
             </SplineWrapper>
             {/* <Image src="/landing.svg" alt="Landing" width="616" height="787" /> */}
           </>
