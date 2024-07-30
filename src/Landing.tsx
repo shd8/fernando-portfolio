@@ -9,11 +9,11 @@ import Spline from "@splinetool/react-spline";
 
 const { landing } = data;
 
-const SplineWrapper = styled(Box)(({ mdDown }: { mdDown: Boolean }) => ({
+const SplineWrapper = styled(Box)(({ mdDown, lgUp }: { mdDown: boolean; lgUp: boolean }) => ({
   position: mdDown ? undefined : "absolute",
-  right: mdDown ? undefined : "-20%",
-  height: mdDown ? "60vh" : undefined,
-  width: mdDown ? "100%" : undefined,
+  right: mdDown ? undefined : lgUp ? "-10vw" : "-20vw",
+  height: mdDown || lgUp ? "60vh" : undefined,
+  width: mdDown ? "100%" : "80%",
 }));
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link, id }) => {
@@ -64,6 +64,7 @@ export default function Landing() {
   const classes = useStyles();
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <Grid container justify="center" alignItems="center" className={classes.cont}>
@@ -92,7 +93,7 @@ export default function Landing() {
       </Grid>
 
       <Grid item lg={6}></Grid>
-      <SplineWrapper mdDown={mdDown}>
+      <SplineWrapper mdDown={mdDown} lgUp={lgUp}>
         {<Spline scene={`https://prod.spline.design/${mdDown ? "IBloZ3RYXpgjascD" : "MXlM9tgFBK6WdzPl"}/scene.splinecode`} />}
       </SplineWrapper>
     </Grid>
