@@ -10,6 +10,8 @@ import Landing from "../src/Landing";
 import Projects from "../src/Projects";
 import Skills from "../src/Skills";
 import { darkTheme, lightTheme } from "../src/theme";
+import PageLoader from "../src/PageLoader";
+import { useSplinesStore } from "../src/stores/useSplinesStore";
 
 const { name, projects } = data;
 
@@ -56,10 +58,9 @@ export async function getStaticProps() {
 
 export default function Index({ projects, setTheme }) {
   const classes = useStyles();
-
   const trigger = useScrollTrigger({ disableHysteresis: true });
-
   const theme = useTheme();
+  const { hasLoadingSplines, setIsIndexSplineLoading } = useSplinesStore();
 
   const toggleTheme = useCallback(() => {
     setTheme((theme) => (theme.palette.type === "dark" ? lightTheme : darkTheme));
@@ -67,9 +68,11 @@ export default function Index({ projects, setTheme }) {
 
   return (
     <div className={classes.root}>
+      {hasLoadingSplines && <PageLoader />}
       <SplineWrapper>
-        <Spline scene="https://prod.spline.design/arW6KRcyeihpTTzn/scene.splinecode" />
+        <Spline onLoad={() => setIsIndexSplineLoading(false)} scene="https://prod.spline.design/arW6KRcyeihpTTzn/scene.splinecode" />
       </SplineWrapper>
+
       <Analytics />
       <AppBar color={!trigger ? "transparent" : "inherit"} className={classes.appBar} position="fixed">
         <Toolbar>

@@ -6,6 +6,7 @@ import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
 import Spline from "@splinetool/react-spline";
+import { useSplinesStore } from "./stores/useSplinesStore";
 
 const { landing } = data;
 
@@ -13,7 +14,7 @@ const SplineWrapper = styled(Box)(({ mdDown, lgUp }: { mdDown: boolean; lgUp: bo
   position: mdDown ? undefined : "absolute",
   right: mdDown ? undefined : lgUp ? "-10vw" : "-20vw",
   height: mdDown || lgUp ? "60vh" : undefined,
-  width: mdDown ? "100%" : "80%",
+  width: mdDown ? "100%" : "85%",
 }));
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link, id }) => {
@@ -65,6 +66,7 @@ export default function Landing() {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down("sm"));
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+  const { setIsLandingSplineLoading } = useSplinesStore();
 
   return (
     <Grid container justify="center" alignItems="center" className={classes.cont}>
@@ -94,7 +96,12 @@ export default function Landing() {
 
       <Grid item lg={6}></Grid>
       <SplineWrapper mdDown={mdDown} lgUp={lgUp}>
-        {<Spline scene={`https://prod.spline.design/${mdDown ? "IBloZ3RYXpgjascD" : "MXlM9tgFBK6WdzPl"}/scene.splinecode`} />}
+        {
+          <Spline
+            onLoad={() => setIsLandingSplineLoading(false)}
+            scene={`https://prod.spline.design/${mdDown ? "IBloZ3RYXpgjascD" : "MXlM9tgFBK6WdzPl"}/scene.splinecode`}
+          />
+        }
       </SplineWrapper>
     </Grid>
   );
