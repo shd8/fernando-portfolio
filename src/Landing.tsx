@@ -13,7 +13,7 @@ const { landing } = data;
 const SplineWrapper = styled(Box)(({ mdDown, lgUp }: { mdDown: boolean; lgUp: boolean }) => ({
   position: mdDown ? undefined : "absolute",
   right: mdDown ? undefined : lgUp ? "-10vw" : "-20vw",
-  height: mdDown || lgUp ? "60vh" : undefined,
+  height: mdDown || lgUp ? "90vh" : undefined,
   width: mdDown ? "100%" : "85%",
 }));
 

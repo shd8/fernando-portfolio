@@ -4,8 +4,10 @@ interface ISplinesStore {
   hasLoadingSplines: boolean;
   isLandingSplineLoading: boolean;
   isIndexSplineLoading: boolean;
-  setIsLandingSplineLoading: (value: boolean) => void;
+  isSkillsSplineLoading: boolean;
   setIsIndexSplineLoading: (value: boolean) => void;
+  setIsLandingSplineLoading: (value: boolean) => void;
+  setIsSkillsSplineLoading: (value: boolean) => void;
   updateHasLoadingSplines: () => void;
 }
 
@@ -13,6 +15,7 @@ const initialState = {
   hasLoadingSplines: true,
   isLandingSplineLoading: true,
   isIndexSplineLoading: true,
+  isSkillsSplineLoading: true,
 };
 
 export const useSplinesStore = create<ISplinesStore>((set, get) => ({
@@ -21,12 +24,16 @@ export const useSplinesStore = create<ISplinesStore>((set, get) => ({
     const { isLandingSplineLoading, isIndexSplineLoading } = get();
     set({ hasLoadingSplines: isLandingSplineLoading || isIndexSplineLoading });
   },
+  setIsIndexSplineLoading: (value: boolean) => {
+    set({ isIndexSplineLoading: value });
+    get().updateHasLoadingSplines();
+  },
   setIsLandingSplineLoading: (value: boolean) => {
     set({ isLandingSplineLoading: value });
     get().updateHasLoadingSplines();
   },
-  setIsIndexSplineLoading: (value: boolean) => {
-    set({ isIndexSplineLoading: value });
+  setIsSkillsSplineLoading: (value: boolean) => {
+    set({ isSkillsSplineLoading: value });
     get().updateHasLoadingSplines();
   },
 }));

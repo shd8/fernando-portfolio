@@ -1,21 +1,22 @@
-import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom } from "@material-ui/core";
+import { Avatar, Box, Fade, Grid, Hidden, makeStyles, styled, Tooltip, Typography, useMediaQuery, useTheme, Zoom } from "@material-ui/core";
 import clsx from "clsx";
-import Image from "next/legacy/image";
 import { useRef } from "react";
 import * as icons from "simple-icons";
 import data from "../data.json";
 import useAnimate from "./useAnimate";
 import { getDescendantProp, iconify } from "./util";
-
-interface SkillItem {
-  alt?: string;
-  backgroundColor?: string;
-  icon?: string;
-}
-
+import Spline from "@splinetool/react-spline";
+import { useSplinesStore } from "./stores/useSplinesStore";
 interface Skills {
   [key: string]: any[];
 }
+
+const SplineWrapper = styled(Box)(({ mdDown }: { mdDown: boolean }) => ({
+  width: "100vw",
+  height: "100vh",
+  position: "absolute",
+  "z-index": "-1",
+}));
 
 const skills = data.skills as Skills;
 
@@ -77,20 +78,27 @@ export default function Skills() {
 
   const animRef = useRef(null);
   const animate = useAnimate(animRef);
+  const { setIsSkillsSplineLoading } = useSplinesStore();
 
   return (
     <Grid container justify="center" alignItems="center" spacing={10} className={classes.cont}>
+      <SplineWrapper mdDown={mdDown}>
+        <Spline
+          onLoad={() => setIsSkillsSplineLoading(false)}
+          scene={`https://prod.spline.design/${mdDown ? "YTC85xKUvVi9Zf0j" : "bKCzTqMTtAcCPU6A"}/scene.splinecode`}
+        />
+      </SplineWrapper>
       <Grid item xs={12} lg={6} ref={animRef}>
         <Typography variant="h2" gutterBottom align="center">
           Skills
         </Typography>
-        <Hidden mdDown>
-          <Fade in={animate} style={{ transitionDelay: "100ms" }}>
-            <div>
+        {/* <Hidden mdDown>
+          <Fade in={animate} style={{ transitionDelay: "100ms" }}> */}
+        {/* <div>
               <Image alt="Skills" src="/skill.svg" width="575" height="338" />
-            </div>
-          </Fade>
-        </Hidden>
+            </div> */}
+        {/* </Fade>
+        </Hidden> */}
       </Grid>
       <Grid container item xs={12} lg={6} direction="column" spacing={1} alignItems={align}>
         {Object.getOwnPropertyNames(wrappedSkills).map((title, id) => (
