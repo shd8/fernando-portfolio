@@ -72,20 +72,33 @@ const useStyles: () => IAnyObject = makeStyles((theme) => ({
 export default function Skills() {
   const classes = useStyles();
   const theme = useTheme();
-  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
-  const align = mdDown ? "center" : "flex-end";
-  const textAlign = mdDown ? "center" : "right";
+  const isLight = theme.palette.type === "light";
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const align = isMobile ? "center" : "flex-end";
+  const textAlign = isMobile ? "center" : "right";
+
+  type SceneMapNames = "isMobileIsLight" | "isDesktopIsLight" | "isMobileIsDark" | "isDesktopIsDark";
 
   const animRef = useRef(null);
   const animate = useAnimate(animRef);
   const { setIsSkillsSplineLoading } = useSplinesStore();
 
+  const sceneMap: { [key in SceneMapNames]: string } = {
+    isMobileIsLight: "a7IvAvV0aSLwnJTp",
+    isDesktopIsLight: "zfy4eNCcOiXQ64Pt",
+    isMobileIsDark: "YTC85xKUvVi9Zf0j",
+    isDesktopIsDark: "bKCzTqMTtAcCPU6A",
+  };
+
+  const currentScene = sceneMap[`is${isMobile ? "Mobile" : "Desktop"}Is${isLight ? "Light" : "Dark"}`];
+
   return (
     <Grid container justify="center" alignItems="center" spacing={10} className={classes.cont}>
-      <SplineWrapper mdDown={mdDown}>
+      <SplineWrapper mdDown={isMobile}>
         <Spline
+          onLoadStartCapture={() => setIsSkillsSplineLoading(true)}
           onLoad={() => setIsSkillsSplineLoading(false)}
-          scene={`https://prod.spline.design/${mdDown ? "YTC85xKUvVi9Zf0j" : "bKCzTqMTtAcCPU6A"}/scene.splinecode`}
+          scene={`https://prod.spline.design/${currentScene}/scene.splinecode`}
         />
       </SplineWrapper>
       <Grid item xs={12} lg={6} ref={animRef}>
