@@ -32,7 +32,8 @@
     "start": "next start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "deploy": "npx vercel --prod",
-    "cv:pdf": "./scripts/generate-cv-pdf.sh"
+    "cv:pdf": "./scripts/generate-cv-pdf.sh",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "devDependencies": {
     "@types/simple-icons": "^4.10.0",
