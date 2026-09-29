@@ -5,6 +5,7 @@ import simpleIcons from "simple-icons";
 import clsx from "clsx";
 import Image from "next/legacy/image";
 import { iconify } from "./util";
+import { withYears } from "./seo";
 import Cancel from "@material-ui/icons/Cancel";
 const { about } = data;
 
@@ -70,13 +71,13 @@ export default function About() {
           About me
         </Typography>
         <Typography variant="h5" gutterBottom component="p">
-          {about.description}
+          {withYears(about.description)}
         </Typography>
       </Grid>
       <Grid container direction="column" item xs={12} lg={6} spacing={2} justify="center" alignItems="center">
         <Grid item xs={12}>
           <Avatar variant="rounded" className={classes.dp}>
-            <Image alt="Display Picture" src={about.picture} layout="fill" />
+            <Image alt={`${data.name}, ${data.profile.jobTitle}`} src={about.picture} layout="fill" />
           </Avatar>
         </Grid>
         <Grid container item xs={12} spacing={2} justify="center">

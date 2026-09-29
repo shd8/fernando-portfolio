@@ -5,10 +5,11 @@ import clsx from "clsx";
 import * as icons from "simple-icons";
 import data from "../data.json";
 import { getDescendantProp } from "./util";
-import Spline from "@splinetool/react-spline";
+import Spline from "./SafeSpline";
 import { useSplinesStore } from "./stores/useSplinesStore";
 
-const { landing } = data;
+const { landing, name } = data;
+const lastName = name.replace(/^Fernando\s+/, "");
 
 const SplineWrapper = styled(Box)(({ mdDown, lgUp }: { mdDown: boolean; lgUp: boolean }) => ({
   position: mdDown ? undefined : "absolute",
@@ -49,8 +50,12 @@ const useStyles: () => IAnyObject = makeStyles((theme) => ({
     minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
     paddingBottom: theme.spacing(10),
   },
-  subtitle: {
+  tagline: {
     marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(1),
+  },
+  subtitle: {
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(5),
   },
   avatar: {
@@ -73,8 +78,17 @@ export default function Landing() {
       <Grid item xs={12} lg={6}>
         <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h2" : "h1"}>
           {landing.title}
+          <Box component="span" display="block" fontSize="0.45em">
+            {lastName}
+          </Box>
         </Typography>
-        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h5" : "h4"} component="h2" className={classes.subtitle}>
+        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h5" : "h4"} component="h2" className={classes.tagline}>
+          {landing.tagline}
+        </Typography>
+        <Typography align={mdDown ? "center" : "inherit"} variant="subtitle1" color="textSecondary">
+          {landing.stack}
+        </Typography>
+        <Typography align={mdDown ? "center" : "inherit"} variant="h6" component="div" aria-hidden="true" className={classes.subtitle}>
           <ReactTyped strings={landing.subtitles} typeSpeed={40} backSpeed={50} loop />
         </Typography>
         <Grid container direction="row" spacing={2} justify={mdDown ? "center" : undefined}>

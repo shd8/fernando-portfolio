@@ -1,12 +1,61 @@
 {
-    "name": "Fernando Gómez",
+    "name": "Fernando Gómez Graciani",
+    "profile": {
+        "jobTitle": "Senior Full Stack Software Engineer",
+        "titleStack": "React, TypeScript",
+        "metaDescription": "Fernando Gómez Graciani is a Senior Full Stack Software Engineer with {years}+ years of experience building web applications with React, TypeScript, Next.js and Node.js. Senior Software Engineer at ArangoDB, previously Accenture. Based in Barcelona, Spain, open to remote roles.",
+        "alternateNames": [
+            "Fernando Gomez Graciani",
+            "Fernando Gómez",
+            "Fernando Gomez",
+            "shd8"
+        ],
+        "email": "shadyfast8.services@gmail.com",
+        "city": "Barcelona",
+        "countryCode": "ES",
+        "currentCompany": "ArangoDB",
+        "currentCompanyUrl": "https://arangodb.com/",
+        "alumniOf": [
+            "ISDI Coders (Skylab Coders Academy)"
+        ],
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "keywords": [
+            "Full Stack Development",
+            "Software Engineering",
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "Next.js",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Redux",
+            "TanStack Query",
+            "Vue.js",
+            "Jest",
+            "Cypress",
+            "Testing Library",
+            "Web Performance",
+            "Frontend Architecture",
+            "Graph Databases",
+            "ArangoDB",
+            "Remote Work"
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/fernando-gomez-graciani/",
+            "https://github.com/shd8"
+        ]
+    },
     "landing": {
         "title": "Hi, I'm Fernando",
         "subtitles": [
-            "Frontend developer &#x1F4BB;",
-            "Full-stack developer &#x1F310;",
-            "Cross-platform developer &#x1F4F1; &#x1F4BB;",
-            "Beautifully coding &#x1F4AB;"
+            "Full Stack Engineer &#x1F310;",
+            "React &amp; TypeScript specialist &#x269B;&#xFE0F;",
+            "Next.js &amp; Node.js developer &#x1F4BB;",
+            "Remote-first, based in Barcelona &#x1F30D;"
         ],
         "professionalDetails": [
             {
@@ -27,7 +76,9 @@
                 "icon": "Gmail",
                 "link": "mailto:shadyfast8.services@gmail.com"
             }
-        ]
+        ],
+        "tagline": "Senior Full Stack Software Engineer",
+        "stack": "React · TypeScript · Next.js · Node.js — open to remote roles"
     },
     "skills": {
         "Languages known": [
@@ -94,7 +145,6 @@
             "Jira",
             "Markdown",
             "Prettier"
-
         ]
     },
     "projects": {
@@ -114,7 +164,7 @@
         "Work Experience": [
             {
                 "organization": "ArangoDB",
-                "role": "Frontend Developer",
+                "role": "Senior Software Engineer",
                 "startDate": "2023-04",
                 "endDate": "",
                 "country": "Remote",
@@ -179,7 +229,7 @@
         ]
     },
     "about": {
-        "description": "Highly motivated Frontend Developer with 3+ years of experience building user-friendly and performant web applications using React, Next.js, and TypeScript. Eager to contribute to the next innovative company and leverage my skills in component development, API integration, and performance optimization to help expand your React ecosystem.",
+        "description": "Senior Full Stack Software Engineer with {years}+ years of experience building fast, well-tested web applications with React, TypeScript, Next.js and Node.js. At ArangoDB I build the product UI for a graph database used by teams around the world; before that I shipped features for Accenture clients such as IKEA and Roche. I care about clean component architecture, good API integration and performance. Based in Barcelona and open to remote Full Stack or Frontend roles.",
         "picture": "/FERNANDO.webp",
         "social": [
             {

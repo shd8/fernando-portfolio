@@ -2,7 +2,10 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import data from '../data.json'
-const { name } = data
+import { siteUrl, title, description, ogImage, jsonLd } from '../src/seo'
+
+const { name, profile } = data
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export default class MyDocument extends Document {
   render() {
@@ -11,8 +14,32 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet='utf-8' />
           <meta name="theme-color" content="black" />
-          <meta name="description" content={`Portfolio of ${name}`}/>
-          <meta name='keywords' content={'Portfolio ' + name + ' skills projects experience resume'} />
+          <meta name="description" content={description} />
+          <meta name="keywords" content={[name, ...profile.alternateNames, profile.jobTitle, 'Full Stack Engineer', 'Software Engineer', 'Frontend Engineer', 'Remote', ...profile.keywords].join(', ')} />
+          <meta name="author" content={name} />
+          <meta name="robots" content="index, follow, max-image-preview:large" />
+          <link rel="canonical" href={`${siteUrl}/`} />
+          {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
+
+          <meta property="og:type" content="profile" />
+          <meta property="og:site_name" content={name} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={`${siteUrl}/`} />
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={`${name}, ${profile.jobTitle}`} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="profile:first_name" content="Fernando" />
+          <meta property="profile:last_name" content="Gómez Graciani" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={ogImage} />
+
+          <link rel="alternate" type="text/plain" title="LLM-readable profile" href="/llms.txt" />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
           <link 
             rel="preload" 
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" as="style"

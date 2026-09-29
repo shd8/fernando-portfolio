@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "",
     "start_url": "",
-    "name": "Fernando Gomez Graciani",
+    "name": "Fernando Gómez Graciani",
     "short_name": "FG",
-    "description": "Fernando Gomez Graciani portfolio",
+    "description": "Fernando Gómez Graciani, Senior Full Stack Software Engineer (React, TypeScript, Node.js)",
     "icons": [
         {
             "src": "/favicon-512x512.png",
@@ -26,7 +26,7 @@
             "type": "image/png"
         },
         {
-            "src": "/favixon-96x96.png",
+            "src": "/favicon-96x96.png",
             "sizes": "96x96",
             "type": "image/png",
             "purpose": "any maskable"
