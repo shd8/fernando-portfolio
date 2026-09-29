@@ -47,6 +47,15 @@
         "sameAs": [
             "https://www.linkedin.com/in/fernando-gomez-graciani/",
             "https://github.com/shd8"
+        ],
+        "education": [
+            {
+                "institution": "ISDI Coders (Skylab Coders Academy)",
+                "program": "Full Stack Web Development Bootcamp",
+                "startDate": "2021-04",
+                "endDate": "2021-09",
+                "city": "Barcelona"
+            }
         ]
     },
     "landing": {
@@ -169,7 +178,12 @@
                 "endDate": "",
                 "country": "Remote",
                 "url": "https://arangodb.com/",
-                "thumbnail": "/arangodb.webp"
+                "thumbnail": "/arangodb.webp",
+                "highlights": [
+                    "Build and maintain the React + TypeScript product UI of ArangoDB, a multi-model graph database platform",
+                    "Work across the frontend stack: component architecture, server state and API integration, testing and performance",
+                    "Collaborate daily with a fully remote, international engineering team"
+                ]
             },
             {
                 "organization": "Accenture",
@@ -178,7 +192,11 @@
                 "endDate": "2023-04",
                 "country": "Remote",
                 "url": "https://www.accenture.com/us-en/about/company/integrated-reporting#",
-                "thumbnail": "/ACCENTURE.webp"
+                "thumbnail": "/ACCENTURE.webp",
+                "highlights": [
+                    "Frontend development for international client projects, including IKEA's main website and Roche",
+                    "Delivered features in React and TypeScript within large, multi-team codebases"
+                ]
             },
             {
                 "organization": "Dinbeaters",
@@ -189,7 +207,10 @@
                 "state": "Barcelona",
                 "country": "Spain",
                 "url": "https://www.dinbeat.com/en/",
-                "thumbnail": "/DINBEAT.webp"
+                "thumbnail": "/DINBEAT.webp",
+                "highlights": [
+                    "React development for a private product, from UI components to API integration"
+                ]
             },
             {
                 "organization": "ISDI Coders",
@@ -200,7 +221,10 @@
                 "state": "Barcelona",
                 "country": "Spain",
                 "url": "https://isdicoders.com/",
-                "thumbnail": "/ISDI.webp"
+                "thumbnail": "/ISDI.webp",
+                "highlights": [
+                    "Intensive full stack bootcamp (formerly Skylab Coders Academy): MERN stack, TypeScript, TDD and agile delivery"
+                ]
             },
             {
                 "organization": "IRIUM",
@@ -211,7 +235,10 @@
                 "state": "Balearic Islands",
                 "country": "Spain",
                 "url": "https://www.irium.es/?lang=en",
-                "thumbnail": "/IRIUM.webp"
+                "thumbnail": "/IRIUM.webp",
+                "highlights": [
+                    "Frontend development of web applications with JavaScript, HTML and CSS"
+                ]
             }
         ],
         "Volunteer Experience": [
@@ -243,5 +270,6 @@
                 "link": "https://www.instagram.com/shadyfast8/"
             }
         ]
-    }
+    },
+    "talks": []
 }

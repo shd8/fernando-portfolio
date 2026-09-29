@@ -1,5 +1,6 @@
 import data from "../../data.json";
 import { siteUrl, description, withYears } from "../../src/seo";
+import { getPostSummaries } from "../../src/posts";
 
 const { name, profile, about, skills, experience } = data;
 
@@ -9,6 +10,7 @@ const skillName = (skill) => (typeof skill === "string" ? skill : skill.alt);
 
 // https://llmstxt.org — a plain-text profile for LLMs and AI search engines.
 export default function handler(req, res) {
+  const posts = getPostSummaries();
   const body = `# ${name}
 
 > ${description}
@@ -25,6 +27,7 @@ ${withYears(about.description)}
 - Languages: ${profile.languages.join(", ")}
 - Contact: ${profile.email}
 - Portfolio: ${siteUrl}
+- CV: ${siteUrl}/cv (PDF: ${siteUrl}/Fernando-Gomez-Graciani-CV.pdf)
 ${profile.sameAs.map((url) => `- ${new URL(url).hostname.replace("www.", "")}: ${url}`).join("\n")}
 
 ## Skills
@@ -36,10 +39,17 @@ ${Object.entries(skills)
 ## Experience
 
 ${experience["Work Experience"]
-  .map(({ organization, role, startDate, endDate, city, country }) => `- ${role}, ${organization} (${formatMonth(startDate)} – ${formatMonth(endDate)}, ${city ? `${city}, ${country}` : "Remote"})`)
+  .map(
+    ({ organization, role, startDate, endDate, city, country, highlights }) =>
+      `- ${role}, ${organization} (${formatMonth(startDate)} – ${formatMonth(endDate)}, ${city ? `${city}, ${country}` : "Remote"})\n${highlights.map((h) => `  - ${h}`).join("\n")}`
+  )
   .join("\n")}
 
-## Projects
+${
+  data.talks.length
+    ? `## Talks\n\n${data.talks.map((talk) => `- "${talk.title}", ${talk.event} (${talk.date})${talk.url ? `: ${talk.url}` : ""}`).join("\n")}\n\n`
+    : ""
+}${posts.length ? `## Articles\n\n${posts.map((post) => `- [${post.title}](${siteUrl}/blog/${post.slug}) (${post.date}): ${post.description}`).join("\n")}\n\n` : ""}## Projects
 
 ${data.projects.repositories.map((repo) => `- ${repo}: https://github.com/shd8/${repo}`).join("\n")}
 `;

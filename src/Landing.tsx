@@ -76,7 +76,7 @@ export default function Landing() {
   return (
     <Grid container justify="center" alignItems="center" className={classes.cont}>
       <Grid item xs={12} lg={6}>
-        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h2" : "h1"}>
+        <Typography align={mdDown ? "center" : "inherit"} variant={mdDown ? "h2" : "h1"} component="h1">
           {landing.title}
           <Box component="span" display="block" fontSize="0.45em">
             {lastName}
