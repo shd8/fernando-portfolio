@@ -87,7 +87,7 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
   const contact = [
     { label: profile.email, href: `mailto:${profile.email}` },
     { label: siteUrl.replace("https://", ""), href: siteUrl },
-    ...profile.sameAs.map((url) => ({ label: url.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, ""), href: url })),
+    ...profile.sameAs.filter((url) => /linkedin\.com|github\.com/.test(url)).map((url) => ({ label: url.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, ""), href: url })),
   ];
 
   return (
