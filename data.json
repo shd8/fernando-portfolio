@@ -3,7 +3,7 @@
     "profile": {
         "jobTitle": "Senior Full Stack Software Engineer",
         "titleStack": "React, TypeScript",
-        "metaDescription": "Fernando Gómez Graciani is a Senior Full Stack Software Engineer with {years}+ years of experience building web applications with React, TypeScript, Next.js and Node.js. Senior Software Engineer at ArangoDB, previously Accenture. Based in Barcelona, Spain, open to remote roles.",
+        "metaDescription": "Fernando Gómez Graciani is a Senior Full Stack Software Engineer with {years}+ years of experience building production web applications with React, TypeScript, Next.js, Node.js and Python. Senior Fullstack Developer at ArangoDB (graph visualization and GraphRAG), previously Accenture. Based in Barcelona, Spain, open to remote roles.",
         "alternateNames": [
             "Fernando Gomez Graciani",
             "Fernando Gómez",
@@ -16,11 +16,26 @@
         "currentCompany": "ArangoDB",
         "currentCompanyUrl": "https://arangodb.com/",
         "alumniOf": [
-            "ISDI Coders (Skylab Coders Academy)"
+            "ISDI Coders Academy",
+            "UOC (Open University of Catalonia)"
         ],
         "languages": [
-            "English",
-            "Spanish"
+            {
+                "name": "Spanish",
+                "level": "Native"
+            },
+            {
+                "name": "Catalan",
+                "level": "Native"
+            },
+            {
+                "name": "English",
+                "level": "Professional"
+            },
+            {
+                "name": "Portuguese",
+                "level": "Professional"
+            }
         ],
         "keywords": [
             "Full Stack Development",
@@ -31,17 +46,28 @@
             "Next.js",
             "Node.js",
             "Express",
-            "MongoDB",
-            "Redux",
+            "Python",
+            "FastAPI",
             "TanStack Query",
-            "Vue.js",
-            "Jest",
-            "Cypress",
-            "Testing Library",
-            "Web Performance",
-            "Frontend Architecture",
-            "Graph Databases",
+            "Zustand",
+            "Redux Toolkit",
+            "GraphQL",
+            "REST API Design",
+            "PostgreSQL",
             "ArangoDB",
+            "MongoDB",
+            "Graph Visualization",
+            "Cytoscape.js",
+            "D3.js",
+            "GraphRAG",
+            "Knowledge Graphs",
+            "Docker",
+            "Kubernetes",
+            "GitHub Actions",
+            "Jest",
+            "Playwright",
+            "Testing Library",
+            "Claude Code",
             "Remote Work"
         ],
         "sameAs": [
@@ -50,11 +76,140 @@
         ],
         "education": [
             {
-                "institution": "ISDI Coders (Skylab Coders Academy)",
+                "institution": "ISDI Coders Academy",
                 "program": "Full Stack Web Development Bootcamp",
-                "startDate": "2021-04",
-                "endDate": "2021-09",
-                "city": "Barcelona"
+                "endDate": "2021-06",
+                "city": "Barcelona",
+                "note": "Elite Performance Award (top 5% of cohort)"
+            },
+            {
+                "institution": "UOC (Open University of Catalonia)",
+                "program": "Software Engineering (BSc coursework)",
+                "city": "Barcelona",
+                "note": "Highest honors in several subjects"
+            }
+        ],
+        "summary": "Full stack product engineer with {years}+ years shipping production applications, used to owning a feature from the React interface down through the API layer and the data model. Front end is React and TypeScript; behind it I build production Python services with FastAPI and Node.js/Express services, design the REST contracts they expose, and model the data in graph, document and relational stores. At ArangoDB I led the replacement of a failing Server-Sent Events pipeline with a resilient job-based polling architecture, built a graph visualization platform that stays responsive at 1,000+ nodes, and cut unnecessary API calls by 60% with a new data-fetching architecture.",
+        "certifications": [
+            "Claude Code in Action (Anthropic)",
+            "AWS Certified Cloud Practitioner",
+            "Python for Data Science and AI (IBM)"
+        ],
+        "cvSkills": [
+            {
+                "group": "Front End",
+                "items": [
+                    "React",
+                    "TypeScript",
+                    "JavaScript (ES2024)",
+                    "Next.js",
+                    "Component Architecture",
+                    "shadcn/ui (Tailwind)",
+                    "Chakra UI",
+                    "Material UI",
+                    "Vue/Vuex",
+                    "Figma"
+                ]
+            },
+            {
+                "group": "State & Data Fetching",
+                "items": [
+                    "TanStack React Query",
+                    "Zustand",
+                    "Redux Toolkit",
+                    "Redux",
+                    "Smart Caching",
+                    "Query Invalidation"
+                ]
+            },
+            {
+                "group": "Back End",
+                "items": [
+                    "Python (FastAPI, Pydantic, Uvicorn)",
+                    "Node.js",
+                    "Express.js",
+                    "async/await",
+                    "Microservices"
+                ]
+            },
+            {
+                "group": "APIs",
+                "items": [
+                    "REST API Design",
+                    "API Contract Design",
+                    "GraphQL (schemas, resolvers)",
+                    "Server-Sent Events",
+                    "WebSockets",
+                    "Job-Based Polling"
+                ]
+            },
+            {
+                "group": "Data",
+                "items": [
+                    "PostgreSQL",
+                    "ArangoDB (graph, document, AQL)",
+                    "MongoDB",
+                    "Data Modeling",
+                    "IndexedDB"
+                ]
+            },
+            {
+                "group": "Visualization & Performance",
+                "items": [
+                    "Cytoscape.js (1,000+ nodes)",
+                    "D3 Force Layout",
+                    "Render Optimization",
+                    "Dense-Data Interfaces"
+                ]
+            },
+            {
+                "group": "AI & LLM",
+                "items": [
+                    "GraphRAG tooling",
+                    "Knowledge-graph modeling",
+                    "Claude Code",
+                    "Spec-driven agentic development",
+                    "Cursor",
+                    "GitHub Copilot"
+                ]
+            },
+            {
+                "group": "Cloud & CI/CD",
+                "items": [
+                    "Docker",
+                    "Kubernetes",
+                    "GitHub Actions",
+                    "GitLab",
+                    "AWS (Certified Cloud Practitioner)",
+                    "Vite",
+                    "Webpack",
+                    "Turborepo",
+                    "pnpm Workspaces"
+                ]
+            },
+            {
+                "group": "Testing & Quality",
+                "items": [
+                    "Jest",
+                    "React Testing Library",
+                    "Playwright",
+                    "Cypress",
+                    "Trivy (container & dependency scanning)",
+                    "CVE triage",
+                    "Code Reviews"
+                ]
+            },
+            {
+                "group": "Ways of Working",
+                "items": [
+                    "ADRs",
+                    "API Specifications",
+                    "Coding Standards",
+                    "Technical Writing",
+                    "Mentoring",
+                    "Fully remote since 2022",
+                    "Async written communication"
+                ]
             }
         ]
     },
@@ -100,6 +255,7 @@
             "React",
             "Redux",
             "Next.js",
+            "D3.js",
             "Vue.js",
             "Vercel",
             "Material-UI",
@@ -109,8 +265,11 @@
         "Backend": [
             "Node.js",
             "Express",
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "GraphQL",
             "MongoDB",
-            "Heroku",
             "Firebase"
         ],
         "Testing": [
@@ -120,6 +279,8 @@
             "SonarQube"
         ],
         "And more tools and technologies": [
+            "Kubernetes",
+            "Docker",
             "Git",
             "GitHub",
             "ESLint",
@@ -173,29 +334,33 @@
         "Work Experience": [
             {
                 "organization": "ArangoDB",
-                "role": "Senior Software Engineer",
+                "role": "Senior Fullstack Developer",
                 "startDate": "2023-04",
                 "endDate": "",
                 "country": "Remote",
                 "url": "https://arangodb.com/",
                 "thumbnail": "/arangodb.webp",
                 "highlights": [
-                    "Build and maintain the React + TypeScript product UI of ArangoDB, a multi-model graph database platform",
-                    "Work across the frontend stack: component architecture, server state and API integration, testing and performance",
-                    "Collaborate daily with a fully remote, international engineering team"
+                    "Led the migration of GraphRAG multifile imports from a Server-Sent Events stream to a resilient job-based polling system: specced it, agreed the REST contract with the backend team, and built the reusable type-safe React Query layer on top",
+                    "Engineered a graph visualization platform on Cytoscape.js and D3 force layouts with custom Zustand stores, staying responsive at 1,000+ nodes",
+                    "Designed the platform-wide data-fetching architecture (smart caching, query invalidation, polling), cutting unnecessary API calls by 60%",
+                    "Builds production Python services with FastAPI, Pydantic and Uvicorn alongside Node.js/Express services; graph and document modeling with AQL in ArangoDB",
+                    "Owns Trivy container and dependency scanning in CI and CVE triage under SOC 2; owns coding standards, architectural guides, API specs and ADRs",
+                    "Ships through Docker, GitHub Actions and Kubernetes, with Jest, React Testing Library and Playwright coverage; works spec-driven with Claude Code"
                 ]
             },
             {
                 "organization": "Accenture",
-                "role": "Frontend Developer",
+                "role": "Fullstack Developer",
                 "startDate": "2022-03",
                 "endDate": "2023-04",
                 "country": "Remote",
                 "url": "https://www.accenture.com/us-en/about/company/integrated-reporting#",
                 "thumbnail": "/ACCENTURE.webp",
                 "highlights": [
-                    "Frontend development for international client projects, including IKEA's main website and Roche",
-                    "Delivered features in React and TypeScript within large, multi-team codebases"
+                    "Extended an international web application to 10 additional global markets for top-tier clients, owning features end to end across React/Next.js and Node.js microservices",
+                    "Led the migration to Next.js and optimized Node.js microservices, reducing server response times; migrated Redux to Redux Toolkit, improving page load times",
+                    "Designed and consumed GraphQL and REST APIs over PostgreSQL, including schema and resolver design"
                 ]
             },
             {
@@ -209,13 +374,14 @@
                 "url": "https://www.dinbeat.com/en/",
                 "thumbnail": "/DINBEAT.webp",
                 "highlights": [
-                    "React development for a private product, from UI components to API integration"
+                    "Introduced one development standard and Git workflow across the platform, cutting code review time by 30% and shortening onboarding",
+                    "Migrated the platform from React class components to a functional/Hooks architecture, improving page load speed"
                 ]
             },
             {
                 "organization": "ISDI Coders",
-                "role": "Full Stack Developer",
-                "startDate": "2021-04",
+                "role": "FullStack Developer",
+                "startDate": "2021-03",
                 "endDate": "2021-09",
                 "city": "Barcelona",
                 "state": "Barcelona",
@@ -223,21 +389,22 @@
                 "url": "https://isdicoders.com/",
                 "thumbnail": "/ISDI.webp",
                 "highlights": [
-                    "Intensive full stack bootcamp (formerly Skylab Coders Academy): MERN stack, TypeScript, TDD and agile delivery"
+                    "Built React/Redux applications over MongoDB through a RESTful API, mentored junior developers on React best practices, and led the adoption of Vue for an e-commerce build"
                 ]
             },
             {
-                "organization": "IRIUM",
+                "organization": "IRIUM Solutions & Systems",
                 "role": "Frontend Developer",
-                "startDate": "2020-02",
-                "endDate": "2021-03",
+                "startDate": "2020-01",
+                "endDate": "2021-02",
                 "city": "Mallorca",
                 "state": "Balearic Islands",
                 "country": "Spain",
                 "url": "https://www.irium.es/?lang=en",
                 "thumbnail": "/IRIUM.webp",
                 "highlights": [
-                    "Frontend development of web applications with JavaScript, HTML and CSS"
+                    "Built and maintained a testing framework that raised coverage to 80% and reduced defects by 25%",
+                    "Resolved user-reported issues at a 95% first-call resolution rate and helped reduce technical debt"
                 ]
             }
         ],
@@ -256,7 +423,7 @@
         ]
     },
     "about": {
-        "description": "Senior Full Stack Software Engineer with {years}+ years of experience building fast, well-tested web applications with React, TypeScript, Next.js and Node.js. At ArangoDB I build the product UI for a graph database used by teams around the world; before that I shipped features for Accenture clients such as IKEA and Roche. I care about clean component architecture, good API integration and performance. Based in Barcelona and open to remote Full Stack or Frontend roles.",
+        "description": "Senior Full Stack Software Engineer with {years}+ years of experience shipping production web applications with React, TypeScript, Next.js, Node.js and Python. At ArangoDB I own features end to end, from the React interface through the API contract to the data model: graph visualization that stays responsive at 1,000+ nodes, GraphRAG tooling, and a data-fetching architecture that cut unnecessary API calls by 60%. Before that, at Accenture, I extended an international web application to 10 additional global markets. I care about type-safe contracts, resilient data flows, testing and clear engineering standards. Based in Barcelona and open to remote Full Stack or Frontend roles.",
         "picture": "/FERNANDO.webp",
         "social": [
             {

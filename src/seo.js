@@ -15,6 +15,8 @@ export const title = `${name} — Senior Full Stack Engineer (${profile.titleSta
 
 export const description = withYears(profile.metaDescription);
 
+export const languagesText = profile.languages.map(({ name, level }) => `${name} (${level})`).join(", ");
+
 export const ogImage = `${siteUrl}/api/og`;
 
 export const jsonLd = {
@@ -36,7 +38,8 @@ export const jsonLd = {
       worksFor: { "@type": "Organization", name: profile.currentCompany, url: profile.currentCompanyUrl },
       alumniOf: profile.alumniOf.map((org) => ({ "@type": "EducationalOrganization", name: org })),
       knowsAbout: profile.keywords,
-      knowsLanguage: profile.languages,
+      knowsLanguage: profile.languages.map(({ name }) => name),
+      hasCredential: profile.certifications.map((certification) => ({ "@type": "EducationalOccupationalCredential", name: certification })),
       sameAs: profile.sameAs,
     },
     {

@@ -5,20 +5,14 @@ import data from "../data.json";
 import SiteHeader from "../src/SiteHeader";
 import PageMeta from "../src/PageMeta";
 import { getPostSummaries } from "../src/posts";
-import { siteUrl, withYears } from "../src/seo";
+import { siteUrl, withYears, languagesText } from "../src/seo";
 
 const CV_PDF_PATH = "/Fernando-Gomez-Graciani-CV.pdf";
 
-const { name, profile, about, skills, experience } = data;
+const { name, profile, experience } = data;
+const jobs = experience["Work Experience"];
 
 const formatMonth = (date: string) => (date ? new Date(date).toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "Present");
-
-const skillName = (skill: string | { alt: string }) => (typeof skill === "string" ? skill : skill.alt);
-
-const SKILL_GROUP_LABELS: Record<string, string> = { "Languages known": "Languages", "And more tools and technologies": "Tools" };
-
-// The bootcamp is listed under Education on the CV, so leave it out of Experience.
-const jobs = experience["Work Experience"].filter(({ organization }) => !profile.education.some(({ institution }) => institution.startsWith(organization)));
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -37,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   job: {
     marginTop: theme.spacing(2.5),
     breakInside: "avoid",
+    "@media print": { marginTop: 5 },
   },
   jobHeader: {
     display: "flex",
@@ -60,7 +55,15 @@ const useStyles = makeStyles((theme) => ({
       ".MuiPaper-root": { background: "#fff !important", color: "#000 !important", boxShadow: "none !important", padding: "0 !important" },
       ".MuiTypography-colorTextSecondary": { color: "#333 !important" },
       a: { color: "#000 !important" },
-      "@page": { margin: "14mm" },
+      "@page": { size: "A4", margin: "12mm 16mm" },
+      // Print type scale modelled on the LaTeX CV: 10pt body, compact headings, exactly 2 pages.
+      ".cv-doc .MuiTypography-h3": { fontSize: "20pt !important", fontWeight: "500 !important" },
+      ".cv-doc .MuiTypography-h5": { fontSize: "11.5pt !important", fontWeight: "600 !important", textTransform: "uppercase", letterSpacing: "0.04em" },
+      ".cv-doc .MuiTypography-h6": { fontSize: "10pt !important", fontWeight: "600 !important" },
+      ".cv-doc .MuiTypography-body1": { fontSize: "9.3pt !important", lineHeight: "1.35 !important" },
+      ".cv-doc section": { marginTop: "9pt !important" },
+      ".cv-doc .MuiDivider-root": { background: "#000 !important" },
+      ".cv-doc ul": { marginTop: "2pt !important" },
     },
   },
 }));
@@ -109,7 +112,7 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
           </Button>
         </Box>
 
-        <Paper className={classes.paper} component="article">
+        <Paper className={`${classes.paper} cv-doc`} component="article">
           <Typography variant="h3" component="h1">
             {name}
           </Typography>
@@ -117,7 +120,7 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
             {profile.jobTitle}
           </Typography>
           <Typography color="textSecondary">
-            {profile.city}, Spain · Remote (CET) · {profile.languages.join(", ")}
+            {profile.city}, Spain (EU) · Remote, CET
           </Typography>
           <Typography color="textSecondary">
             {contact.map(({ label, href }, i) => (
@@ -135,7 +138,7 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
               Summary
             </Typography>
             <Divider />
-            <Typography style={{ marginTop: 12 }}>{withYears(about.description)}</Typography>
+            <Typography style={{ marginTop: 12 }}>{withYears(profile.summary)}</Typography>
           </section>
 
           <section className={classes.section}>
@@ -170,9 +173,16 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
             </Typography>
             <Divider />
             <ul className={classes.list}>
-              {Object.entries(skills).map(([group, list]) => (
+              {profile.cvSkills.map(({ group, items }) => (
                 <Typography component="li" key={group}>
-                  <strong>{SKILL_GROUP_LABELS[group] ?? group}:</strong> {(list as (string | { alt: string })[]).map(skillName).join(", ")}
+                  <strong>{group}:</strong>{" "}
+                  {items.map((item, i) => (
+                    // Keep each skill on one line: a line break inside "Job-Based" reaches ATS as "JobBased".
+                    <React.Fragment key={item}>
+                      {i > 0 && " · "}
+                      <span style={{ whiteSpace: "nowrap" }}>{item}</span>
+                    </React.Fragment>
+                  ))}
                 </Typography>
               ))}
             </ul>
@@ -183,18 +193,31 @@ export default function CV({ setTheme, hasPosts }: CVProps) {
               Education
             </Typography>
             <Divider />
-            {profile.education.map(({ institution, program, startDate, endDate, city }) => (
+            {profile.education.map(({ institution, program, endDate, city, note }) => (
               <div className={classes.job} key={institution}>
                 <div className={classes.jobHeader}>
                   <Typography variant="h6" component="h3">
                     {program} · {institution}
                   </Typography>
-                  <Typography color="textSecondary">
-                    {formatMonth(startDate)} – {formatMonth(endDate)} · {city}
-                  </Typography>
+                  <Typography color="textSecondary">{endDate ? `Graduated ${formatMonth(endDate)} · ${city}` : city}</Typography>
                 </div>
+                {note && <Typography>{note}</Typography>}
               </div>
             ))}
+          </section>
+          <section className={classes.section}>
+            <Typography variant="h5" component="h2" gutterBottom>
+              Certifications &amp; Languages
+            </Typography>
+            <Divider />
+            <ul className={classes.list}>
+              <Typography component="li">
+                <strong>Certifications:</strong> {profile.certifications.join(" · ")}
+              </Typography>
+              <Typography component="li">
+                <strong>Languages:</strong> {languagesText}
+              </Typography>
+            </ul>
           </section>
         </Paper>
       </Container>
