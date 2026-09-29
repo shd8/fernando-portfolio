@@ -5,7 +5,7 @@ import * as icons from "simple-icons";
 import data from "../data.json";
 import useAnimate from "./useAnimate";
 import { getDescendantProp, iconify } from "./util";
-import Spline from "@splinetool/react-spline";
+import Spline from "./SafeSpline";
 import { useSplinesStore } from "./stores/useSplinesStore";
 interface Skills {
   [key: string]: any[];

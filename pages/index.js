@@ -1,6 +1,6 @@
 import { AppBar, Container, IconButton, makeStyles, Toolbar, Typography, useScrollTrigger, useTheme, Box, styled } from "@material-ui/core";
 import { Brightness4, Brightness7 } from "@material-ui/icons";
-import Spline from "@splinetool/react-spline";
+import Spline from "../src/SafeSpline";
 import { Analytics } from "@vercel/analytics/react";
 import React, { useCallback } from "react";
 import data from "../data.json";
