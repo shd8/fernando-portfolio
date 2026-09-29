@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 export async function getStaticProps() {
   const posts = getPostSummaries();
-  if (posts.length === 0) return { notFound: true };
-  return { props: { posts, hasPosts: true } };
+  if (posts.length === 0) return { notFound: true, revalidate: 3600 };
+  return { props: { posts, hasPosts: true }, revalidate: 3600 };
 }
 
 interface BlogProps {
