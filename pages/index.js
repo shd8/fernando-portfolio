@@ -1,19 +1,19 @@
-import { AppBar, Container, IconButton, makeStyles, Toolbar, Typography, useScrollTrigger, useTheme, Box, styled } from "@material-ui/core";
-import { Brightness4, Brightness7 } from "@material-ui/icons";
+import { Container, makeStyles, Box, styled } from "@material-ui/core";
 import Spline from "../src/SafeSpline";
-import { Analytics } from "@vercel/analytics/react";
-import React, { useCallback } from "react";
+import React from "react";
 import data from "../data.json";
 import About from "../src/About";
 import Experience from "../src/Experience";
 import Landing from "../src/Landing";
 import Projects from "../src/Projects";
 import Skills from "../src/Skills";
-import { darkTheme, lightTheme } from "../src/theme";
+import SiteHeader from "../src/SiteHeader";
+import PageMeta from "../src/PageMeta";
+import { getPostSummaries } from "../src/posts";
 import PageLoader from "../src/PageLoader";
 import { useSplinesStore } from "../src/stores/useSplinesStore";
 
-const { name, projects } = data;
+const { projects } = data;
 
 const SplineWrapper = styled(Box)(() => ({
   position: "absolute",
@@ -27,9 +27,6 @@ const SplineWrapper = styled(Box)(() => ({
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  appBar: {
-    boxShadow: "none",
   },
 }));
 
@@ -51,40 +48,25 @@ export async function getStaticProps() {
   return {
     props: {
       projects: fullRepoData,
+      hasPosts: getPostSummaries().length > 0,
     },
     revalidate: 60,
   };
 }
 
-export default function Index({ projects, setTheme }) {
+export default function Index({ projects, hasPosts, setTheme }) {
   const classes = useStyles();
-  const trigger = useScrollTrigger({ disableHysteresis: true });
-  const theme = useTheme();
   const { hasLoadingSplines, setIsIndexSplineLoading } = useSplinesStore();
-
-  const toggleTheme = useCallback(() => {
-    setTheme((theme) => (theme.palette.type === "dark" ? lightTheme : darkTheme));
-  }, [setTheme]);
 
   return (
     <div className={classes.root}>
+      <PageMeta />
       {hasLoadingSplines && <PageLoader />}
       <SplineWrapper>
         <Spline onLoad={() => setIsIndexSplineLoading(false)} scene="https://prod.spline.design/arW6KRcyeihpTTzn/scene.splinecode" />
       </SplineWrapper>
 
-      <Analytics />
-      <AppBar color={!trigger ? "transparent" : "inherit"} className={classes.appBar} position="fixed">
-        <Toolbar>
-          <Typography variant="h6" className={classes.root}>
-            {name}
-          </Typography>
-          <IconButton aria-label="theme-toggle" edge="end" color="inherit" onClick={toggleTheme}>
-            {theme.palette.type === "dark" ? <Brightness7 /> : <Brightness4 />}
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <Toolbar className={classes.toolbar} />
+      <SiteHeader setTheme={setTheme} hasPosts={hasPosts} transparentUntilScroll />
       <Container>
         <Landing />
         <Skills />

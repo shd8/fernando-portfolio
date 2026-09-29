@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { MuiThemeProvider, useMediaQuery, CssBaseline } from "@material-ui/core";
 import { darkTheme, lightTheme } from "../src/theme";
-import { title } from "../src/seo";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function MyApp({ Component, pageProps }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -24,12 +24,12 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>{title}</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Component {...pageProps} setTheme={setTheme} />
+        <Analytics />
       </MuiThemeProvider>
     </React.Fragment>
   );
