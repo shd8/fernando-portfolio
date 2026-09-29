@@ -4,6 +4,7 @@ import Head from "next/head";
 import { MuiThemeProvider, useMediaQuery, CssBaseline } from "@material-ui/core";
 import { darkTheme, lightTheme } from "../src/theme";
 import { Analytics } from "@vercel/analytics/react";
+import "highlight.js/styles/github-dark.min.css";
 
 export default function MyApp({ Component, pageProps }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");

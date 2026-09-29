@@ -3,14 +3,18 @@ name: IndexNow
 # After each successful Vercel production deploy, tell Bing and other IndexNow engines to recrawl the sitemap.
 on:
   deployment_status:
+  # Scheduled posts go live without a deploy, so check once a day for posts published today.
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
 
 jobs:
   ping:
-    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    if: github.event_name != 'deployment_status' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: node scripts/indexnow.mjs https://fernando-gomez-graciani.vercel.app
+      - run: node scripts/indexnow.mjs https://fernando-gomez-graciani.vercel.app ${{ github.event_name == 'schedule' && '--published-today' || '' }}

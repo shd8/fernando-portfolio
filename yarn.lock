@@ -5038,6 +5038,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^11":
+  version: 11.12.0
+  resolution: "highlight.js@npm:11.12.0"
+  checksum: ee53ad7a20f78e2904d809caf01b6f6c52a5cc99acf36d29788ce65d22ae4a7f59d4c8c275a5c52bf6ef65096a6a43b44b68101c730b8561a75e3eb39de5cc56
+  languageName: node
+  linkType: hard
+
 "hmac-drbg@npm:^1.0.1":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -6370,6 +6377,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"marked-highlight@npm:^2":
+  version: 2.2.4
+  resolution: "marked-highlight@npm:2.2.4"
+  peerDependencies:
+    marked: ">=4 <19"
+  checksum: 120c0822e64d11ba719b553bfbafdf721dab4634663127814df70e380c43b1edc120bf35ee8f125fda06459f7db7d432997ca7f5ecc5df72fda618c52235c5aa
+  languageName: node
+  linkType: hard
+
 "marked@npm:^18.0.14":
   version: 18.0.14
   resolution: "marked@npm:18.0.14"
@@ -6846,7 +6862,9 @@ __metadata:
     clsx: latest
     eslint-config-next: latest
     gray-matter: ^4.0.3
+    highlight.js: ^11
     marked: ^18.0.14
+    marked-highlight: ^2
     next: latest
     next-pwa: ^5.6.0
     prettier: ^3.3.3

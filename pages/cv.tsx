@@ -74,7 +74,7 @@ const cvDescription = withYears(
 );
 
 export async function getStaticProps() {
-  return { props: { hasPosts: getPostSummaries().length > 0 } };
+  return { props: { hasPosts: getPostSummaries().length > 0 }, revalidate: 3600 };
 }
 
 interface CVProps {

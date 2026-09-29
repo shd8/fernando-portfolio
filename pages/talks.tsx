@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export async function getStaticProps() {
   if (talks.length === 0) return { notFound: true };
-  return { props: { hasPosts: getPostSummaries().length > 0 } };
+  return { props: { hasPosts: getPostSummaries().length > 0 }, revalidate: 3600 };
 }
 
 interface TalksProps {
