@@ -24,6 +24,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
 
           <link rel="alternate" type="text/plain" title="LLM-readable profile" href="/llms.txt" />
+          <link rel="alternate" type="application/rss+xml" title={`${name} — Blog`} href="/blog/rss.xml" />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
           <link 
             rel="preload" 
