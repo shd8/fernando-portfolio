@@ -7,6 +7,7 @@ import Experience from "../src/Experience";
 import Landing from "../src/Landing";
 import Projects from "../src/Projects";
 import Skills from "../src/Skills";
+import LatestWriting from "../src/LatestWriting";
 import SiteHeader from "../src/SiteHeader";
 import PageMeta from "../src/PageMeta";
 import { getPostSummaries } from "../src/posts";
@@ -45,16 +46,19 @@ export async function getStaticProps() {
     })
   );
 
+  const posts = getPostSummaries();
+
   return {
     props: {
       projects: fullRepoData,
-      hasPosts: getPostSummaries().length > 0,
+      hasPosts: posts.length > 0,
+      latestPosts: posts.slice(0, 3).map(({ slug, title, description, date }) => ({ slug, title, description, date })),
     },
     revalidate: 60,
   };
 }
 
-export default function Index({ projects, hasPosts, setTheme }) {
+export default function Index({ projects, hasPosts, latestPosts, setTheme }) {
   const classes = useStyles();
   const { hasLoadingSplines, setIsIndexSplineLoading } = useSplinesStore();
 
@@ -71,6 +75,7 @@ export default function Index({ projects, hasPosts, setTheme }) {
         <Landing />
         <Skills />
         <Projects data={projects} />
+        <LatestWriting posts={latestPosts} />
         <Experience />
         <About />
       </Container>

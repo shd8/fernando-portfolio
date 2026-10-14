@@ -5,6 +5,7 @@ module.exports = {
     outputFileTracingIncludes: {
       "/api/sitemap": ["./content/**"],
       "/api/llms": ["./content/**"],
+      "/api/rss": ["./content/**"],
       // Pages revalidate (ISR) to publish scheduled posts, so they need the posts at runtime too.
       "/": ["./content/**"],
       "/cv": ["./content/**"],
@@ -18,6 +19,7 @@ module.exports = {
       { source: "/robots.txt", destination: "/api/robots" },
       { source: "/sitemap.xml", destination: "/api/sitemap" },
       { source: "/llms.txt", destination: "/api/llms" },
+      { source: "/blog/rss.xml", destination: "/api/rss" },
     ];
   },
 };

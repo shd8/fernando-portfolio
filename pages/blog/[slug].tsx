@@ -27,6 +27,14 @@ const useStyles = makeStyles((theme) => ({
     "& table": { borderCollapse: "collapse", display: "block", overflowX: "auto" },
     "& th, & td": { border: `1px solid ${theme.palette.divider}`, padding: theme.spacing(1, 1.5), textAlign: "left" },
     "& img": { maxWidth: "100%" },
+    // Embedded media (<video>, <iframe>) written as raw HTML in the Markdown.
+    "& video, & iframe": { display: "block", width: "100%", aspectRatio: "16 / 9", border: 0, borderRadius: theme.shape.borderRadius, margin: theme.spacing(3, 0), background: "#000" },
+  },
+  cover: {
+    display: "block",
+    width: "100%",
+    borderRadius: theme.shape.borderRadius,
+    marginBottom: theme.spacing(4),
   },
   byline: {
     marginTop: theme.spacing(1),
@@ -55,6 +63,7 @@ interface PostPageProps {
 export default function PostPage({ post, hasPosts, setTheme }: PostPageProps) {
   const classes = useStyles();
   const url = `${siteUrl}/blog/${post.slug}`;
+  const image = post.cover ? new URL(post.cover, siteUrl).href : `${siteUrl}/api/og?title=${encodeURIComponent(post.title)}`;
 
   return (
     <ContentPage setTheme={setTheme} hasPosts={hasPosts}>
@@ -64,7 +73,8 @@ export default function PostPage({ post, hasPosts, setTheme }: PostPageProps) {
         path={`/blog/${post.slug}`}
         type="article"
         publishedTime={post.date}
-        image={`${siteUrl}/api/og?title=${encodeURIComponent(post.title)}`}
+        image={image}
+        canonical={post.canonical}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -72,9 +82,9 @@ export default function PostPage({ post, hasPosts, setTheme }: PostPageProps) {
           description: post.description,
           datePublished: post.date,
           url,
-          mainEntityOfPage: url,
+          mainEntityOfPage: post.canonical || url,
           keywords: post.tags.join(", "),
-          image: `${siteUrl}/api/og?title=${encodeURIComponent(post.title)}`,
+          image,
           author: { "@type": "Person", "@id": `${siteUrl}/#person`, name, url: siteUrl },
         }}
       />
@@ -93,6 +103,9 @@ export default function PostPage({ post, hasPosts, setTheme }: PostPageProps) {
             </>
           )}
         </Typography>
+        {/* Covers can be any external URL, which next/image would need allowlisted. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {post.cover && <img src={post.cover} alt="" className={classes.cover} />}
         <div className={classes.body} dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
       <AuthorCard />

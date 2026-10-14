@@ -15,8 +15,9 @@ const marked = new Marked(
 
 const WORDS_PER_MINUTE = 220;
 
-// Blog posts live in content/blog/<slug>.md with front matter: title, description, date, tags,
-// draft (optional), originalUrl (optional: where the post first appeared, e.g. a LinkedIn article).
+// Blog posts live in content/blog/<slug>.md with front matter: title, summary (or description), date, tags,
+// draft (optional), cover (optional image URL), canonical (optional: where the post first appeared; the page's
+// <link rel="canonical"> points there) and originalUrl (optional: credited in the byline without changing the canonical).
 const POSTS_DIR = path.join(process.cwd(), "content", "blog");
 
 const readPostFile = (file) => {
@@ -25,10 +26,12 @@ const readPostFile = (file) => {
   return {
     slug,
     title: data.title,
-    description: data.description,
+    description: data.summary || data.description,
     date: new Date(data.date).toISOString().slice(0, 10),
     tags: data.tags || [],
-    originalUrl: data.originalUrl || null,
+    canonical: data.canonical || null,
+    cover: data.cover || null,
+    originalUrl: data.canonical || data.originalUrl || null,
     draft: !!data.draft,
     readingMinutes: Math.max(1, Math.round(content.split(/\s+/).length / WORDS_PER_MINUTE)),
     content,

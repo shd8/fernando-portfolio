@@ -13,17 +13,19 @@ interface PageMetaProps {
   publishedTime?: string;
   jsonLd?: object;
   image?: string;
+  // Set when the page was first published elsewhere, so search engines credit the original.
+  canonical?: string | null;
 }
 
 // Per-page title, description, canonical URL and social cards. Site-wide tags live in _document.
-export default function PageMeta({ title = defaultTitle, description = defaultDescription, path = "/", type = "profile", publishedTime, jsonLd, image = ogImage }: PageMetaProps) {
+export default function PageMeta({ title = defaultTitle, description = defaultDescription, path = "/", type = "profile", publishedTime, jsonLd, image = ogImage, canonical }: PageMetaProps) {
   const url = `${siteUrl}${path}`;
 
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} key="description" />
-      <link rel="canonical" href={url} key="canonical" />
+      <link rel="canonical" href={canonical || url} key="canonical" />
       <meta property="og:type" content={type} key="og:type" />
       <meta property="og:title" content={title} key="og:title" />
       <meta property="og:description" content={description} key="og:description" />
